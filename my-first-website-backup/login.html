@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول - فهد</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Tahoma, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    img {
+      width: 120px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 2px solid #00ffff;
+      box-shadow: 0 0 15px #00ffff;
+    }
+
+    h1 {
+      color: #00ffff;
+      margin-bottom: 20px;
+    }
+
+    input {
+      padding: 10px;
+      width: 250px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #00ffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background-color: #00cccc;
+    }
+
+    .msg {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الشعار -->
+  <img src="logo.jpg" alt="شعار فهد">
+
+  <h1>تسجيل الدخول</h1>
+
+  <input type="text" id="username" placeholder="اسم المستخدم"><br>
+  <input type="password" id="password" placeholder="كلمة السر"><br>
+  <button onclick="login()">تسجيل الدخول</button>
+
+  <div class="msg" id="message"></div>
+
+  <script>
+    function login() {
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("message");
+
+      if (user === "fahad" && pass === "cyber") {
+        msg.style.color = "lightgreen";
+        msg.textContent = "تم تسجيل الدخول بنجاح! جاري التحويل...";
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 1500);
+      } else {
+        msg.style.color = "red";
+        msg.textContent = "اسم المستخدم أو كلمة السر غير صحيحة!";
+      }
+    }
+  </script>
+
+</body>
+</html>
